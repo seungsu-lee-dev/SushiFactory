@@ -10,8 +10,13 @@ using System.Windows.Forms;
 
 namespace md
 {
+    public delegate void DataHandler(string send_quan);
+    public delegate void DataHandler2(int send_kind);
+
     public partial class junForm : Form
     {
+        public DataHandler quan_send;
+        public DataHandler2 kind_send;
         public junForm()
         {
             InitializeComponent();
@@ -32,24 +37,32 @@ namespace md
 
         private void btn1_Click(object sender, EventArgs e)
         {
-            string sushi = cmb.Text;  //콤보박스 값을 sushi에 입력 
             
-            int num = int.Parse(tb.Text);  //수량을 num에 입력
 
             int set;
+
+
             if (cb1.Checked == true)
                 set = 1;                     //세트메뉴가 선택이 되면 값을 1
             else
                 set = 0;                     //세트메뉴가 선택되지 않으면 값을 0 
 
-            
+           
+
+         
+            quan_send(tb.Text);
+            kind_send(cmb.SelectedIndex);
 
             MessageBox.Show("주문이 완료되었습니다 !", "주문완료", MessageBoxButtons.OK);
-
+            
 
             cmb.Text = string.Empty;    //값 입력 후 초기화 
             tb.Text = string.Empty;
             cb1.Checked = false;
+
+            this.Close();
+
+
             
         }
 
