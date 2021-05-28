@@ -179,5 +179,11 @@ delegate ()
             wooForm woo = new wooForm();
             woo.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            maForm ma = new maForm();
+            ma.ShowDialog();
+        }
     }
 }
