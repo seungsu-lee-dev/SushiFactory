@@ -7,17 +7,24 @@ namespace md
 {
     public partial class Form1 : Form
     {
+
+        
         Random rand = new Random();
-        string data = "OCT";
+        string dataa;
+        int order_stock;
+        
 
         public Form1()
         {
             InitializeComponent();
-            Thread rTh = new Thread(new ParameterizedThreadStart(MakeChobab));
-            rTh.Start(data);
-
+            
         }
-        public void MakeChobab(object data)
+
+        
+
+
+
+        public void MakeChobab(object dataa)
         {
             PictureBox[] a = new PictureBox[7];
             a[0] = pictureBox1;
@@ -30,27 +37,28 @@ namespace md
             PictureBox product = null;
 
             a[0].Image = Properties.Resources.arm;
-            if (data.Equals("TUNA"))
+            if (dataa.Equals("TUNA"))
             {
                 a[5].Image = Properties.Resources.tuna;
                 a[6].Image = Properties.Resources.finaltuna;
+                
             }
-            else if (data.Equals("EGG"))
+            else if (dataa.Equals("EGG"))
             {
                 a[5].Image = Properties.Resources.egg;
                 a[6].Image = Properties.Resources.finalegg;
             }
-            else if (data.Equals("SALMON"))
+            else if (dataa.Equals("SALMON"))
             {
                 a[5].Image = Properties.Resources.salmon;
                 a[6].Image = Properties.Resources.finalsalmon;
             }
-            else if (data.Equals("OCT"))
+            else if (dataa.Equals("OCT"))
             {
                 a[5].Image = Properties.Resources.oct;
                 a[6].Image = Properties.Resources.finaloct;
             }
-            else if (data.Equals("KWANG"))
+            else if (dataa.Equals("KWANG"))
             {
                 a[5].Image = Properties.Resources.kwang;
                 a[6].Image = Properties.Resources.finalkwang;
@@ -84,6 +92,7 @@ new MethodInvoker(
             a[3].Visible = true;
             Point p6 = a[0].Location;
             product = a[3];
+
             for (int j = 0; j < 25; j++)
             {
                 int y = a[0].Location.Y + 7;
@@ -93,7 +102,11 @@ new MethodInvoker(
                 a[0].Location = p1;
                 product.Location = p;
                 Thread.Sleep(10);
+
+                
+
             }
+            a[0].Location = p6;
             a[3].Visible = false;
 
 
@@ -152,6 +165,7 @@ delegate ()
                 a[2].Location = p1;
                 product.Location = p;
                 Thread.Sleep(10);
+
             }
             a[5].Visible = false;
             a[2].Location = p8;
@@ -170,8 +184,15 @@ delegate ()
         private void button1_Click(object sender, EventArgs e)
         {
             junForm jun = new junForm();
-            jun.ShowDialog();
+            jun.quan_send += new DataHandler(this.getdata);
+            jun.kind_send += new DataHandler2(this.kind_data);
             
+            jun.ShowDialog();
+
+            Thread rTh = new Thread(new ParameterizedThreadStart(MakeChobab));
+            rTh.Start(dataa);
+
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -180,10 +201,50 @@ delegate ()
             woo.ShowDialog();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+                private void button3_Click(object sender, EventArgs e)
         {
             maForm ma = new maForm();
             ma.ShowDialog();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void getdata(string data)
+        {
+            order_stock = int.Parse(data);
+            
+        }
+        private void kind_data(int data)
+        {
+            
+            if (data == 0)
+            {
+                dataa = "TUNA";
+            }
+            else if (data == 1)
+            {
+                dataa = "KWANG";
+            }
+            else if (data == 2)
+            {
+                dataa = "EGG";
+            }
+            else if (data == 3)
+            {
+                dataa = "SALMON";
+            }
+            else if (data == 4)
+            {
+                dataa = "OCT";
+            }
+            
+        }
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
