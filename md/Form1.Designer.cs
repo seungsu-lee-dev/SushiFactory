@@ -29,6 +29,7 @@ namespace md
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -67,6 +68,15 @@ namespace md
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip4 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip5 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip6 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip7 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip8 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip9 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -133,6 +143,7 @@ namespace md
             this.pbRak.Name = "pbRak";
             this.pbRak.Size = new System.Drawing.Size(279, 23);
             this.pbRak.TabIndex = 7;
+            this.pbRak.MouseHover += new System.EventHandler(this.pbRak_MouseHover);
             // 
             // pbDan
             // 
@@ -140,6 +151,7 @@ namespace md
             this.pbDan.Name = "pbDan";
             this.pbDan.Size = new System.Drawing.Size(279, 23);
             this.pbDan.TabIndex = 6;
+            this.pbDan.MouseHover += new System.EventHandler(this.pbDan_MouseHover);
             // 
             // groupBox4
             // 
@@ -211,6 +223,7 @@ namespace md
             this.pbTuna.Name = "pbTuna";
             this.pbTuna.Size = new System.Drawing.Size(279, 23);
             this.pbTuna.TabIndex = 1;
+            this.pbTuna.MouseHover += new System.EventHandler(this.pbTuna_MouseHover);
             // 
             // pbEgg
             // 
@@ -218,6 +231,7 @@ namespace md
             this.pbEgg.Name = "pbEgg";
             this.pbEgg.Size = new System.Drawing.Size(279, 23);
             this.pbEgg.TabIndex = 2;
+            this.pbEgg.MouseHover += new System.EventHandler(this.pbEgg_MouseHover);
             // 
             // pbSalmon
             // 
@@ -225,6 +239,7 @@ namespace md
             this.pbSalmon.Name = "pbSalmon";
             this.pbSalmon.Size = new System.Drawing.Size(279, 23);
             this.pbSalmon.TabIndex = 3;
+            this.pbSalmon.MouseHover += new System.EventHandler(this.pbSalmon_MouseHover);
             // 
             // pbOct
             // 
@@ -232,6 +247,7 @@ namespace md
             this.pbOct.Name = "pbOct";
             this.pbOct.Size = new System.Drawing.Size(279, 23);
             this.pbOct.TabIndex = 4;
+            this.pbOct.MouseHover += new System.EventHandler(this.pbOct_MouseHover);
             // 
             // pbKwang
             // 
@@ -239,6 +255,7 @@ namespace md
             this.pbKwang.Name = "pbKwang";
             this.pbKwang.Size = new System.Drawing.Size(279, 23);
             this.pbKwang.TabIndex = 5;
+            this.pbKwang.MouseHover += new System.EventHandler(this.pbKwang_MouseHover);
             // 
             // groupBox3
             // 
@@ -268,6 +285,7 @@ namespace md
             this.pbWasabi.Name = "pbWasabi";
             this.pbWasabi.Size = new System.Drawing.Size(279, 23);
             this.pbWasabi.TabIndex = 2;
+            this.pbWasabi.MouseHover += new System.EventHandler(this.pbWasabi_MouseHover);
             // 
             // label1
             // 
@@ -284,6 +302,7 @@ namespace md
             this.pbBob.Name = "pbBob";
             this.pbBob.Size = new System.Drawing.Size(279, 23);
             this.pbBob.TabIndex = 0;
+            this.pbBob.MouseHover += new System.EventHandler(this.pbBob_MouseHover);
             // 
             // button1
             // 
@@ -515,6 +534,15 @@ namespace md
         private System.Windows.Forms.ProgressBar pbWasabi;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip2;
+        private System.Windows.Forms.ToolTip toolTip3;
+        private System.Windows.Forms.ToolTip toolTip4;
+        private System.Windows.Forms.ToolTip toolTip5;
+        private System.Windows.Forms.ToolTip toolTip6;
+        private System.Windows.Forms.ToolTip toolTip7;
+        private System.Windows.Forms.ToolTip toolTip8;
+        private System.Windows.Forms.ToolTip toolTip9;
     }
 }
 

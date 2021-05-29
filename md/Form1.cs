@@ -343,11 +343,6 @@ delegate ()
             oraclesearch();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void getdata(string data)
         {
             order_stock = int.Parse(data);
@@ -613,6 +608,51 @@ delegate ()
                     ModifyProgressBarColor.SetState(pbRak, 1);
                 }
             }
+        }
+
+        private void pbBob_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(pbBob, $"{Convert.ToInt32(pbBob.Value)}/100");
+        }
+
+        private void pbWasabi_MouseHover(object sender, EventArgs e)
+        {
+            toolTip2.SetToolTip(pbWasabi, $"{Convert.ToInt32(pbWasabi.Value)}/100");
+        }
+
+        private void pbTuna_MouseHover(object sender, EventArgs e)
+        {
+            toolTip3.SetToolTip(pbTuna, $"{Convert.ToInt32(pbTuna.Value)}/100");
+        }
+
+        private void pbEgg_MouseHover(object sender, EventArgs e)
+        {
+            toolTip4.SetToolTip(pbEgg, $"{Convert.ToInt32(pbEgg.Value)}/100");
+        }
+
+        private void pbSalmon_MouseHover(object sender, EventArgs e)
+        {
+            toolTip5.SetToolTip(pbSalmon, $"{Convert.ToInt32(pbSalmon.Value)}/100");
+        }
+
+        private void pbOct_MouseHover(object sender, EventArgs e)
+        {
+            toolTip6.SetToolTip(pbOct, $"{Convert.ToInt32(pbOct.Value)}/100");
+        }
+
+        private void pbKwang_MouseHover(object sender, EventArgs e)
+        {
+            toolTip7.SetToolTip(pbKwang, $"{Convert.ToInt32(pbKwang.Value)}/100");
+        }
+
+        private void pbDan_MouseHover(object sender, EventArgs e)
+        {
+            toolTip8.SetToolTip(pbDan, $"{Convert.ToInt32(pbDan.Value)}/100");
+        }
+
+        private void pbRak_MouseHover(object sender, EventArgs e)
+        {
+            toolTip9.SetToolTip(pbRak, $"{Convert.ToInt32(pbRak.Value)}/100");
         }
     }
 

@@ -40,10 +40,10 @@ namespace md
             cboRice.Items.Add("와사비");
 
             cboFish.Items.Add("참치");
-            cboFish.Items.Add("광어");
             cboFish.Items.Add("계란");
             cboFish.Items.Add("연어");
             cboFish.Items.Add("문어");
+            cboFish.Items.Add("광어");
 
             cboSidemenu.Items.Add("단무지");
             cboSidemenu.Items.Add("락교");
@@ -119,8 +119,8 @@ namespace md
             string tuna = txtFish.Text;
             string egg = txtFish.Text;
             string salmon = txtFish.Text;
-            string kwang = txtFish.Text;
             string oct = txtFish.Text;
+            string kwang = txtFish.Text;
             string dan = txtSidemenu.Text;
             string rak = txtSidemenu.Text;
 
@@ -164,17 +164,6 @@ namespace md
             {
                 if (txtFish.Text != "")
                 {
-                    cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK +{kwang} where Name = 'KWANG'";
-                    cmd.ExecuteNonQuery();
-                }
-                else
-                    cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set stock = stock + 0 where Name = 'KWANG'";
-
-            }
-            if (cboFish.SelectedIndex == 2)
-            {
-                if (txtFish.Text != "")
-                {
                     cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK +{egg} where Name = 'EGG'";
                     cmd.ExecuteNonQuery();
                 }
@@ -182,7 +171,7 @@ namespace md
                     cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set stock = stock + 0 where Name = 'EGG'";
 
             }
-            if (cboFish.SelectedIndex == 3)
+            if (cboFish.SelectedIndex == 2)
             {
                 if (txtFish.Text != "")
                 {
@@ -193,7 +182,7 @@ namespace md
                     cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set stock = stock + 0 where Name = 'SALMON'";
 
             }
-            if (cboFish.SelectedIndex == 4)
+            if (cboFish.SelectedIndex == 3)
             {
                 if (txtFish.Text != "")
                 {
@@ -202,6 +191,17 @@ namespace md
                 }
                 else
                     cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set stock = stock + 0 where Name = 'OCT'";
+
+            }
+            if (cboFish.SelectedIndex == 4)
+            {
+                if (txtFish.Text != "")
+                {
+                    cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK +{kwang} where Name = 'KWANG'";
+                    cmd.ExecuteNonQuery();
+                }
+                else
+                    cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set stock = stock + 0 where Name = 'KWANG'";
 
             }
 
