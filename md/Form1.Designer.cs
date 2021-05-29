@@ -34,24 +34,24 @@ namespace md
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.progressBar8 = new System.Windows.Forms.ProgressBar();
-            this.progressBar7 = new System.Windows.Forms.ProgressBar();
+            this.pbRak = new System.Windows.Forms.ProgressBar();
+            this.pbDan = new System.Windows.Forms.ProgressBar();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.progressBar2 = new System.Windows.Forms.ProgressBar();
-            this.progressBar3 = new System.Windows.Forms.ProgressBar();
-            this.progressBar4 = new System.Windows.Forms.ProgressBar();
-            this.progressBar5 = new System.Windows.Forms.ProgressBar();
-            this.progressBar6 = new System.Windows.Forms.ProgressBar();
+            this.pbTuna = new System.Windows.Forms.ProgressBar();
+            this.pbEgg = new System.Windows.Forms.ProgressBar();
+            this.pbSalmon = new System.Windows.Forms.ProgressBar();
+            this.pbOct = new System.Windows.Forms.ProgressBar();
+            this.pbKwang = new System.Windows.Forms.ProgressBar();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.progressBar9 = new System.Windows.Forms.ProgressBar();
+            this.pbWasabi = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.pbBob = new System.Windows.Forms.ProgressBar();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -66,6 +66,7 @@ namespace md
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -80,6 +81,7 @@ namespace md
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -98,8 +100,8 @@ namespace md
             // 
             this.groupBox5.Controls.Add(this.label8);
             this.groupBox5.Controls.Add(this.label7);
-            this.groupBox5.Controls.Add(this.progressBar8);
-            this.groupBox5.Controls.Add(this.progressBar7);
+            this.groupBox5.Controls.Add(this.pbRak);
+            this.groupBox5.Controls.Add(this.pbDan);
             this.groupBox5.Location = new System.Drawing.Point(793, 35);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(343, 213);
@@ -125,19 +127,19 @@ namespace md
             this.label7.TabIndex = 8;
             this.label7.Text = "단무지";
             // 
-            // progressBar8
+            // pbRak
             // 
-            this.progressBar8.Location = new System.Drawing.Point(55, 107);
-            this.progressBar8.Name = "progressBar8";
-            this.progressBar8.Size = new System.Drawing.Size(279, 23);
-            this.progressBar8.TabIndex = 7;
+            this.pbRak.Location = new System.Drawing.Point(55, 107);
+            this.pbRak.Name = "pbRak";
+            this.pbRak.Size = new System.Drawing.Size(279, 23);
+            this.pbRak.TabIndex = 7;
             // 
-            // progressBar7
+            // pbDan
             // 
-            this.progressBar7.Location = new System.Drawing.Point(55, 48);
-            this.progressBar7.Name = "progressBar7";
-            this.progressBar7.Size = new System.Drawing.Size(279, 23);
-            this.progressBar7.TabIndex = 6;
+            this.pbDan.Location = new System.Drawing.Point(55, 48);
+            this.pbDan.Name = "pbDan";
+            this.pbDan.Size = new System.Drawing.Size(279, 23);
+            this.pbDan.TabIndex = 6;
             // 
             // groupBox4
             // 
@@ -146,11 +148,11 @@ namespace md
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.label2);
-            this.groupBox4.Controls.Add(this.progressBar2);
-            this.groupBox4.Controls.Add(this.progressBar3);
-            this.groupBox4.Controls.Add(this.progressBar4);
-            this.groupBox4.Controls.Add(this.progressBar5);
-            this.groupBox4.Controls.Add(this.progressBar6);
+            this.groupBox4.Controls.Add(this.pbTuna);
+            this.groupBox4.Controls.Add(this.pbEgg);
+            this.groupBox4.Controls.Add(this.pbSalmon);
+            this.groupBox4.Controls.Add(this.pbOct);
+            this.groupBox4.Controls.Add(this.pbKwang);
             this.groupBox4.Location = new System.Drawing.Point(383, 24);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(386, 233);
@@ -203,47 +205,47 @@ namespace md
             this.label2.TabIndex = 6;
             this.label2.Text = "참치";
             // 
-            // progressBar2
+            // pbTuna
             // 
-            this.progressBar2.Location = new System.Drawing.Point(50, 32);
-            this.progressBar2.Name = "progressBar2";
-            this.progressBar2.Size = new System.Drawing.Size(279, 23);
-            this.progressBar2.TabIndex = 1;
+            this.pbTuna.Location = new System.Drawing.Point(50, 32);
+            this.pbTuna.Name = "pbTuna";
+            this.pbTuna.Size = new System.Drawing.Size(279, 23);
+            this.pbTuna.TabIndex = 1;
             // 
-            // progressBar3
+            // pbEgg
             // 
-            this.progressBar3.Location = new System.Drawing.Point(50, 77);
-            this.progressBar3.Name = "progressBar3";
-            this.progressBar3.Size = new System.Drawing.Size(279, 23);
-            this.progressBar3.TabIndex = 2;
+            this.pbEgg.Location = new System.Drawing.Point(50, 77);
+            this.pbEgg.Name = "pbEgg";
+            this.pbEgg.Size = new System.Drawing.Size(279, 23);
+            this.pbEgg.TabIndex = 2;
             // 
-            // progressBar4
+            // pbSalmon
             // 
-            this.progressBar4.Location = new System.Drawing.Point(50, 118);
-            this.progressBar4.Name = "progressBar4";
-            this.progressBar4.Size = new System.Drawing.Size(279, 23);
-            this.progressBar4.TabIndex = 3;
+            this.pbSalmon.Location = new System.Drawing.Point(50, 118);
+            this.pbSalmon.Name = "pbSalmon";
+            this.pbSalmon.Size = new System.Drawing.Size(279, 23);
+            this.pbSalmon.TabIndex = 3;
             // 
-            // progressBar5
+            // pbOct
             // 
-            this.progressBar5.Location = new System.Drawing.Point(49, 157);
-            this.progressBar5.Name = "progressBar5";
-            this.progressBar5.Size = new System.Drawing.Size(279, 23);
-            this.progressBar5.TabIndex = 4;
+            this.pbOct.Location = new System.Drawing.Point(49, 157);
+            this.pbOct.Name = "pbOct";
+            this.pbOct.Size = new System.Drawing.Size(279, 23);
+            this.pbOct.TabIndex = 4;
             // 
-            // progressBar6
+            // pbKwang
             // 
-            this.progressBar6.Location = new System.Drawing.Point(50, 201);
-            this.progressBar6.Name = "progressBar6";
-            this.progressBar6.Size = new System.Drawing.Size(279, 23);
-            this.progressBar6.TabIndex = 5;
+            this.pbKwang.Location = new System.Drawing.Point(50, 201);
+            this.pbKwang.Name = "pbKwang";
+            this.pbKwang.Size = new System.Drawing.Size(279, 23);
+            this.pbKwang.TabIndex = 5;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.progressBar9);
+            this.groupBox3.Controls.Add(this.pbWasabi);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.progressBar1);
+            this.groupBox3.Controls.Add(this.pbBob);
             this.groupBox3.Location = new System.Drawing.Point(6, 35);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(336, 213);
@@ -260,12 +262,12 @@ namespace md
             this.label9.TabIndex = 10;
             this.label9.Text = "와사비";
             // 
-            // progressBar9
+            // pbWasabi
             // 
-            this.progressBar9.Location = new System.Drawing.Point(51, 117);
-            this.progressBar9.Name = "progressBar9";
-            this.progressBar9.Size = new System.Drawing.Size(279, 23);
-            this.progressBar9.TabIndex = 2;
+            this.pbWasabi.Location = new System.Drawing.Point(51, 117);
+            this.pbWasabi.Name = "pbWasabi";
+            this.pbWasabi.Size = new System.Drawing.Size(279, 23);
+            this.pbWasabi.TabIndex = 2;
             // 
             // label1
             // 
@@ -276,12 +278,12 @@ namespace md
             this.label1.TabIndex = 1;
             this.label1.Text = "밥";
             // 
-            // progressBar1
+            // pbBob
             // 
-            this.progressBar1.Location = new System.Drawing.Point(51, 48);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(279, 23);
-            this.progressBar1.TabIndex = 0;
+            this.pbBob.Location = new System.Drawing.Point(51, 48);
+            this.pbBob.Name = "pbBob";
+            this.pbBob.Size = new System.Drawing.Size(279, 23);
+            this.pbBob.TabIndex = 0;
             // 
             // button1
             // 
@@ -327,6 +329,7 @@ namespace md
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox1.Controls.Add(this.pictureBox10);
             this.groupBox1.Controls.Add(this.pictureBox9);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.pictureBox3);
@@ -430,6 +433,14 @@ namespace md
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
             // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Location = new System.Drawing.Point(848, 238);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(112, 87);
+            this.pictureBox10.TabIndex = 11;
+            this.pictureBox10.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -460,6 +471,7 @@ namespace md
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -476,14 +488,14 @@ namespace md
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.ProgressBar progressBar8;
-        private System.Windows.Forms.ProgressBar progressBar7;
-        private System.Windows.Forms.ProgressBar progressBar6;
-        private System.Windows.Forms.ProgressBar progressBar5;
-        private System.Windows.Forms.ProgressBar progressBar4;
-        private System.Windows.Forms.ProgressBar progressBar3;
-        private System.Windows.Forms.ProgressBar progressBar2;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar pbRak;
+        private System.Windows.Forms.ProgressBar pbDan;
+        private System.Windows.Forms.ProgressBar pbKwang;
+        private System.Windows.Forms.ProgressBar pbOct;
+        private System.Windows.Forms.ProgressBar pbSalmon;
+        private System.Windows.Forms.ProgressBar pbEgg;
+        private System.Windows.Forms.ProgressBar pbTuna;
+        private System.Windows.Forms.ProgressBar pbBob;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
@@ -500,8 +512,9 @@ namespace md
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ProgressBar progressBar9;
+        private System.Windows.Forms.ProgressBar pbWasabi;
         private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox pictureBox10;
     }
 }
 
