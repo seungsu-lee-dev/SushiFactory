@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,14 @@ namespace md
     {
         public DataHandler quan_send;
         public DataHandler2 kind_send;
+
+        string strConn = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xe)));User Id=hr;Password=hr;";
+
+        // 오라클 연결
+
+        OracleConnection conn;
+        OracleCommand cmd;
+
         public junForm()
         {
             InitializeComponent();
@@ -26,19 +35,20 @@ namespace md
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            conn = new OracleConnection(strConn);
+            cmd = new OracleCommand();
+            conn.Open();
+            cmd.Connection = conn;
+
             cmb.Items.Add("참치초밥");
-            cmb.Items.Add("광어초밥");
             cmb.Items.Add("계란초밥");
             cmb.Items.Add("연어초밥");
-            cmb.Items.Add("문어초밥");         //로드할 때 콤보박스 값 추가 
-
-            
+            cmb.Items.Add("문어초밥");
+            cmb.Items.Add("광어초밥");         //로드할 때 콤보박스 값 추가 
         }
 
         private void btn1_Click(object sender, EventArgs e)
         {
-            
-
             int set;
 
 
@@ -47,9 +57,72 @@ namespace md
             else
                 set = 0;                     //세트메뉴가 선택되지 않으면 값을 0 
 
-           
+            string num = tb.Text;
 
-         
+            // 참치 초밥 주문
+            if (cmb.SelectedIndex == 0)
+            {
+                if (num != "")
+                {
+                    cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES +{num} where Name = 'TUNA'";
+                    cmd.ExecuteNonQuery();
+                }
+                else
+                    cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES + 0 where Name = 'TUNA'";
+
+            }
+
+            // 계란 초밥 주문
+            if (cmb.SelectedIndex == 1)
+            {
+                if (num != "")
+                {
+                    cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES +{num} where Name = 'EGG'";
+                    cmd.ExecuteNonQuery();
+                }
+                else
+                    cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES + 0 where Name = 'EGG'";
+
+            }
+
+            // 연어 초밥 주문
+            if (cmb.SelectedIndex == 2)
+            {
+                if (num != "")
+                {
+                    cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES +{num} where Name = 'SALMON'";
+                    cmd.ExecuteNonQuery();
+                }
+                else
+                    cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES + 0 where Name = 'SALMON'";
+
+            }
+
+            // 문어 초밥 주문
+            if (cmb.SelectedIndex == 3)
+            {
+                if (num != "")
+                {
+                    cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES +{num} where Name = 'OCT'";
+                    cmd.ExecuteNonQuery();
+                }
+                else
+                    cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES + 0 where Name = 'OCT'";
+
+            }
+
+            // 광어 초밥 주문
+            if (cmb.SelectedIndex == 4)
+            {
+                if (num != "")
+                {
+                    cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES +{num} where Name = 'KWANG'";
+                    cmd.ExecuteNonQuery();
+                }
+                else
+                    cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES + 0 where Name = 'KWANG'";
+            }
+
             quan_send(tb.Text);
             kind_send(cmb.SelectedIndex);
 
@@ -61,9 +134,6 @@ namespace md
             cb1.Checked = false;
 
             this.Close();
-
-
-            
         }
 
         private void btn2_Click(object sender, EventArgs e)
@@ -86,22 +156,22 @@ namespace md
                 else if (cmb.SelectedIndex == 1)
                 {
                     cmb.SelectedIndex = 1;
-                    pictureBox1.Image = Properties.Resources.광어초밥;
+                    pictureBox1.Image = Properties.Resources.계란초밥;
                 }
                 else if (cmb.SelectedIndex == 2)
                 {
                     cmb.SelectedIndex = 2;
-                    pictureBox1.Image = Properties.Resources.계란초밥;
+                    pictureBox1.Image = Properties.Resources.연어초밥;
                 }
                 else if (cmb.SelectedIndex == 3)
                 {
                     cmb.SelectedIndex = 3;
-                    pictureBox1.Image = Properties.Resources.연어초밥;
+                    pictureBox1.Image = Properties.Resources.문어초밥;
                 }
                 else if (cmb.SelectedIndex == 4)
                 {
                     cmb.SelectedIndex = 4;
-                    pictureBox1.Image = Properties.Resources.문어초밥;
+                    pictureBox1.Image = Properties.Resources.광어초밥;
                 }
             }
             catch (Exception exc)

@@ -9,11 +9,22 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using Oracle.ManagedDataAccess.Client;
 
 namespace md
 {
     public partial class maForm : Form
     {
+        public DataHandler quan_send;
+        public DataHandler2 kind_send;
+
+        string strConn = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xe)));User Id=hr;Password=hr;";
+        
+        // 오라클 연결
+
+        OracleConnection conn;
+        OracleCommand cmd;
+
         public maForm()
         {
             InitializeComponent();
@@ -29,7 +40,7 @@ namespace md
         {
             // 로그 저장
             StreamWriter writer;
-            writer = File.AppendText("C:\\Users\\apro2\\Desktop\\logs.txt"); // 경로 수정 필요!!
+            writer = File.AppendText("logs.txt"); // bin/Debug 폴더에 저장
             writer.WriteLine(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
             writer.WriteLine("판매량");
             foreach (ListViewItem item1 in listView1.Items)
@@ -50,22 +61,67 @@ namespace md
 
         public void Form1_Load(object sender, EventArgs e)
         {
-            int tuna_count = 10;
-            int kwang_count = 20;
-            int egg_count = 30;
-            int salmon_count = 40;
-            int oct_count = 50;
+            conn = new OracleConnection(strConn);
+            cmd = new OracleCommand();
+            conn.Open();
+            cmd.Connection = conn;
 
-            int tuna_price = 100;
-            int kwang_price = 200;
-            int egg_price = 300;
-            int salmon_price = 400;
-            int oct_price = 500;
+            int TUNA_SALES = 0;
+            int EGG_SALES = 0;
+            int SALMON_SALES = 0;
+            int OCT_SALES = 0;
+            int KWANG_SALES = 0;
+
+            //참치 pbBar
+            cmd.CommandText = "select SALES from SALES_MANAGEMENT where NAME = 'TUNA'";
+            OracleDataReader rdr1 = cmd.ExecuteReader();
+            while (rdr1.Read())
+            {
+                TUNA_SALES = rdr1.GetInt32(0);
+            }
+
+            // 계란 pbBar
+            cmd.CommandText = "select SALES from SALES_MANAGEMENT where NAME = 'EGG'";
+            OracleDataReader rdr2 = cmd.ExecuteReader();
+            while (rdr2.Read())
+            {
+                EGG_SALES = rdr2.GetInt32(0);
+            }
+
+            // 연어 pbBar
+            cmd.CommandText = "select SALES from SALES_MANAGEMENT where NAME = 'SALMON'";
+            OracleDataReader rdr3 = cmd.ExecuteReader();
+            while (rdr3.Read())
+            {
+                SALMON_SALES = rdr3.GetInt32(0);
+            }
+
+            // 문어 pbBar
+            cmd.CommandText = "select SALES from SALES_MANAGEMENT where NAME = 'OCT'";
+            OracleDataReader rdr4 = cmd.ExecuteReader();
+            while (rdr4.Read())
+            {
+                OCT_SALES = rdr4.GetInt32(0);
+            }
+
+            // 광어 pbBar
+            cmd.CommandText = "select SALES from SALES_MANAGEMENT where NAME = 'KWANG'";
+            OracleDataReader rdr5 = cmd.ExecuteReader();
+            while (rdr5.Read())
+            {
+                KWANG_SALES = rdr5.GetInt32(0);
+            }
+
+            int tuna_price = 3000;
+            int egg_price = 500;
+            int salmon_price = 3000;
+            int oct_price = 2500;
+            int kwang_price = 1500;
             // 데이터 받아오기
 
-            string[] x1 = { "참치초밥", "광어초밥", "계란초밥", "연어초밥", "문어초밥" };
-            int[] y1 = { tuna_count, kwang_count, egg_count, salmon_count, oct_count };
-            int[] y2 = { y1[0] * tuna_price, y1[1] * kwang_price, y1[2] * egg_price, y1[3] * salmon_price, y1[4] * oct_price };
+            string[] x1 = { "참치초밥", "계란초밥", "연어초밥", "문어초밥", "광어초밥" };
+            int[] y1 = { TUNA_SALES, EGG_SALES, SALMON_SALES, OCT_SALES, KWANG_SALES };
+            int[] y2 = { y1[0] * tuna_price, y1[1] * egg_price, y1[2] * salmon_price, y1[3] * oct_price, y1[4] * kwang_price };
 
             // 차트 만들기
             Chart1.Series[0].Name = "판매량";
