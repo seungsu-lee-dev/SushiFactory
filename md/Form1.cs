@@ -387,6 +387,7 @@ namespace md
 
         private void button3_Click(object sender, EventArgs e)
         {
+
             maForm ma = new maForm();
             ma.ShowDialog();
             oraclesearch();
