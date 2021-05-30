@@ -51,7 +51,7 @@ namespace md
             {
                 a[5].Image = Properties.Resources.tuna;
                 a[6].Image = Properties.Resources.finaltuna;
-                
+
             }
             else if (dataa.Equals("EGG"))
             {
@@ -78,125 +78,129 @@ namespace md
                 MessageBox.Show("잘못 입력");
                 return;
             }
-            a[8].BringToFront();
-            a[7].BringToFront();
-
-            //pictureBox9.Controls.Add(pictureBox4);
-            //pictureBox4.Location = new Point(0, 0);
-            //pictureBox4.BackColor = Color.Transparent;
-            //pictureBox4.BringToFront();
-
-            //pictureBox9.Controls.Add(pictureBox5);
-            //pictureBox5.Location = new Point(0, 0);
-            //pictureBox5.BackColor = Color.Transparent;
-
-            //pictureBox9.Controls.Add(pictureBox6);
-            //pictureBox6.Location = new Point(0, 0);
-            //pictureBox6.BackColor = Color.Transparent;
-
-            a[0].Invoke(
-new MethodInvoker(
-    delegate ()
-    {
-        a[0].Visible = true;
-    }
-)
-);
-            a[3].Visible = true;
-            Point p6 = a[0].Location;
-            Point p9 = a[3].Location;
-            product = a[3];
-
-            for (int j = 0; j < 25; j++)
+            for (int ff = 0; ff < order_stock; ff++)
             {
-                int y = a[0].Location.Y + 5;
-                int x = product.Location.X + 10;
-                Point p1 = new Point(a[0].Location.X, y);
-                Point p = new Point(x, product.Location.Y);
-                a[0].Location = p1;
-                product.Location = p;
-                Thread.Sleep(10);
+                a[8].BringToFront();
+                a[7].BringToFront();
 
-                
+                //pictureBox9.Controls.Add(pictureBox4);
+                //pictureBox4.Location = new Point(0, 0);
+                //pictureBox4.BackColor = Color.Transparent;
+                //pictureBox4.BringToFront();
 
-            }
-            a[3].Visible = false;
-            a[0].Location = p6;
-            a[3].Location = p9;
+                //pictureBox9.Controls.Add(pictureBox5);
+                //pictureBox5.Location = new Point(0, 0);
+                //pictureBox5.BackColor = Color.Transparent;
 
-            Thread.Sleep(100);
+                //pictureBox9.Controls.Add(pictureBox6);
+                //pictureBox6.Location = new Point(0, 0);
+                //pictureBox6.BackColor = Color.Transparent;
 
-            a[0].Visible = true;
-
-            Thread.Sleep(100);
-
-            a[1].Invoke(
+                a[0].Invoke(
     new MethodInvoker(
         delegate ()
         {
-            a[1].Visible = true;
+            a[0].Visible = true;
         }
     )
-);
-            a[4].Visible = true;
-            Point p7 = a[1].Location;
-            Point p10 = a[4].Location;
-            product = a[4];
-            for (int i = 0; i < 25; i++)
-            {
-                int y = a[1].Location.Y + 5;
-                int x = product.Location.X + 10;
-                Point p1 = new Point(a[1].Location.X, y);
-                Point p = new Point(x, product.Location.Y);
-                a[1].Location = p1;
-                product.Location = p;
-                Thread.Sleep(10);
-            }
-            a[4].Visible = false;
-            a[1].Location = p7;
-            a[4].Location = p10;
+    );
 
-
-            a[2].Invoke(
-new MethodInvoker(
-delegate ()
-{
-    a[2].Visible = true;
-}
-)
-);
-            
-            a[5].Visible = true;
-            a[5].BringToFront();
-            a[2].BringToFront();
-            a[9].BringToFront();
-            
-            Point p8 = a[2].Location;
-            Point p11 = a[5].Location;
-            product = a[5];
-            for (int i = 0; i < 25; i++)
-            {
-                int y;
-                Point p1;
-                if (i == 16)
+                a[3].Visible = true;
+                Point p6 = a[0].Location;
+                Point p9 = a[3].Location;
+                product = a[3];
+                for (int j = 0; j < 25; j++)
                 {
-                    a[5].Visible = false;
+                    int y = a[0].Location.Y + 5;
+                    int x = product.Location.X + 10;
+                    Point p1 = new Point(a[0].Location.X, y);
+                    Point p = new Point(x, product.Location.Y);
+                    a[0].Location = p1;
+                    product.Location = p;
                     Thread.Sleep(10);
-                    continue;
+
+
+
+                }
+                a[3].Visible = false;
+                a[0].Location = p6;
+                a[3].Location = p9;
+
+                Thread.Sleep(100);
+
+                a[0].Visible = true;
+
+                Thread.Sleep(100);
+
+                a[1].Invoke(
+        new MethodInvoker(
+            delegate ()
+            {
+                a[1].Visible = true;
+            }
+        )
+    );
+                a[4].Visible = true;
+                Point p7 = a[1].Location;
+                Point p10 = a[4].Location;
+                product = a[4];
+                for (int i = 0; i < 25; i++)
+                {
+                    int y = a[1].Location.Y + 5;
+                    int x = product.Location.X + 10;
+                    Point p1 = new Point(a[1].Location.X, y);
+                    Point p = new Point(x, product.Location.Y);
+                    a[1].Location = p1;
+                    product.Location = p;
+                    Thread.Sleep(10);
+                }
+                a[4].Visible = false;
+                a[1].Location = p7;
+                a[4].Location = p10;
+
+
+                a[2].Invoke(
+    new MethodInvoker(
+    delegate ()
+    {
+        a[2].Visible = true;
+    }
+    )
+    );
+
+                a[5].Visible = true;
+                a[5].BringToFront();
+                a[2].BringToFront();
+                a[9].BringToFront();
+
+                Point p8 = a[2].Location;
+                Point p11 = a[5].Location;
+                product = a[5];
+                for (int i = 0; i < 25; i++)
+                {
+                    int y;
+                    Point p1;
+                    if (i == 16)
+                    {
+                        a[5].Visible = false;
+                        Thread.Sleep(10);
+                        continue;
+                    }
+
+                    y = a[2].Location.Y + 5;
+                    int x = product.Location.X + 10;
+                    p1 = new Point(a[2].Location.X, y);
+                    Point p = new Point(x, product.Location.Y);
+                    a[2].Location = p1;
+                    product.Location = p;
+                    Thread.Sleep(10);
                 }
 
-                y = a[2].Location.Y + 5;
-                int x = product.Location.X + 10;
-                p1 = new Point(a[2].Location.X, y);
-                Point p = new Point(x, product.Location.Y);
-                a[2].Location = p1;
-                product.Location = p;
-                Thread.Sleep(10);
+                a[2].Location = p8;
+                a[5].Location = p11;
+                a[6].BringToFront();
+                Thread.Sleep(500);
             }
-
-            a[2].Location = p8;
-            a[5].Location = p11;
-            a[6].BringToFront();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -213,121 +217,231 @@ delegate ()
             jun.ShowDialog();
 
             Thread rTh = new Thread(new ParameterizedThreadStart(MakeChobab));
-            rTh.Start(dataa);
+            OracleDataReader rdr;
 
-            cmd.CommandText = "SELECT STOCK FROM STOCK_MANAGEMENT WHERE NAME = 'TUNA'";
-
-            // 결과 리더 객체를 리턴
-            OracleDataReader rdr = cmd.ExecuteReader();
-            // 레코드 계속 가져와서 루핑
-            while (rdr.Read())
+            if (dataa == "TUNA")
             {
-                // 필드 데이타 읽기
-                string stock = rdr["STOCK"].ToString();
-                if (Convert.ToInt32(stock) < 11)
+                cmd.CommandText = "SELECT STOCK FROM STOCK_MANAGEMENT WHERE NAME = 'TUNA'";
+
+                // 결과 리더 객체를 리턴
+                rdr = cmd.ExecuteReader();
+                // 레코드 계속 가져와서 루핑
+                while (rdr.Read())
                 {
-                    MessageBox.Show("참치의 재고가 10개 남았습니다", "재고알림", MessageBoxButtons.OK);
-                    break;
+                    // 필드 데이타 읽기
+                    string stock = rdr["STOCK"].ToString();
+                    if (Convert.ToInt32(stock) < Convert.ToInt32(order_stock))
+                    {
+                        MessageBox.Show("참치의 재고가 부족 합니다", "재고알림", MessageBoxButtons.OK);
+                        break;
+                    }
+
+                    else if (Convert.ToInt32(stock) < 11)
+                    {
+                        MessageBox.Show("참치의 재고가 10개 남았습니다", "재고알림", MessageBoxButtons.OK);
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'TUNA'";
+                        cmd.ExecuteNonQuery();
+
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
+                        cmd.ExecuteNonQuery();
+
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
+                        cmd.ExecuteNonQuery();
+                        rTh.Start(dataa);
+                        break;
+                    }
+                    else
+                    {
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'TUNA'";
+                        cmd.ExecuteNonQuery();
+
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
+                        cmd.ExecuteNonQuery();
+
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("주문이 완료 되었습니다.", "주문알림", MessageBoxButtons.OK);
+                        rTh.Start(dataa);
+                    }
                 }
             }
 
-
-            cmd.CommandText = "SELECT STOCK FROM STOCK_MANAGEMENT WHERE NAME = 'EGG'";
-            rdr = cmd.ExecuteReader();
-            while (rdr.Read())
+            if (dataa == "EGG")
             {
-                string stock = rdr["STOCK"].ToString();
-                if (Convert.ToInt32(stock) < 11)
+                cmd.CommandText = "SELECT STOCK FROM STOCK_MANAGEMENT WHERE NAME = 'EGG'";
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read())
                 {
-                    MessageBox.Show("계란의 재고가 10개 남았습니다", "재고알림", MessageBoxButtons.OK);
-                    break;
+                    string stock = rdr["STOCK"].ToString();
+                    if (Convert.ToInt32(stock) < Convert.ToInt32(order_stock))
+                    {
+                        MessageBox.Show("계란의 재고가 부족 합니다", "재고알림", MessageBoxButtons.OK);
+                        break;
+                    }
+                    else if (Convert.ToInt32(stock) < 11)
+                    {
+                        MessageBox.Show("계란의 재고가 10개 남았습니다", "재고알림", MessageBoxButtons.OK);
+                        rTh.Start(dataa);
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'TUNA'";
+                        cmd.ExecuteNonQuery();
+
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
+                        cmd.ExecuteNonQuery();
+
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
+                        cmd.ExecuteNonQuery();
+                        break;
+                    }
+                    else
+                    {
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'EGG'";
+                        cmd.ExecuteNonQuery();
+
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
+                        cmd.ExecuteNonQuery();
+
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("주문이 완료 되었습니다.", "주문알림", MessageBoxButtons.OK);
+                        rTh.Start(dataa);
+
+                    }
                 }
             }
 
-            cmd.CommandText = "SELECT STOCK FROM STOCK_MANAGEMENT WHERE NAME = 'SALMON'";
-            rdr = cmd.ExecuteReader();
-            while (rdr.Read())
+            if (dataa == "SALMON")
             {
-                string stock = rdr["STOCK"].ToString();
-                if (Convert.ToInt32(stock) < 11)
+                cmd.CommandText = "SELECT STOCK FROM STOCK_MANAGEMENT WHERE NAME = 'SALMON'";
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read())
                 {
-                    MessageBox.Show("연어의 재고가 10개 남았습니다", "재고알림", MessageBoxButtons.OK);
-                    break;
+                    string stock = rdr["STOCK"].ToString();
+                    if (Convert.ToInt32(stock) < Convert.ToInt32(order_stock))
+                    {
+                        MessageBox.Show("연어의 재고가 부족 합니다", "재고알림", MessageBoxButtons.OK);
+                        break;
+                    }
+
+                    else if (Convert.ToInt32(stock) < 11)
+                    {
+                        MessageBox.Show("참치의 재고가 10개 남았습니다", "재고알림", MessageBoxButtons.OK);
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'TUNA'";
+                        cmd.ExecuteNonQuery();
+
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
+                        cmd.ExecuteNonQuery();
+
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
+                        cmd.ExecuteNonQuery();
+                        rTh.Start(dataa);
+                        
+                    }
+                    else
+                    {
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'SALMON'";
+                        cmd.ExecuteNonQuery();
+
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
+                        cmd.ExecuteNonQuery();
+
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("주문이 완료 되었습니다.", "주문알림", MessageBoxButtons.OK);
+                        rTh.Start(dataa);
+                    }
                 }
             }
 
-            cmd.CommandText = "SELECT STOCK FROM STOCK_MANAGEMENT WHERE NAME = 'OCT'";
-            rdr = cmd.ExecuteReader();
-            while (rdr.Read())
+            if (dataa == "OCT")
             {
-                string stock = rdr["STOCK"].ToString();
-                if (Convert.ToInt32(stock) < 11)
+                cmd.CommandText = "SELECT STOCK FROM STOCK_MANAGEMENT WHERE NAME = 'OCT'";
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read())
                 {
-                    MessageBox.Show("문어의 재고가 10개 남았습니다", "재고알림", MessageBoxButtons.OK);
-                    break;
+                    string stock = rdr["STOCK"].ToString();
+                    if (Convert.ToInt32(stock) < Convert.ToInt32(order_stock))
+                    {
+                        MessageBox.Show("문어의 재고가 부족 합니다", "재고알림", MessageBoxButtons.OK);
+                        break;
+                    }
+
+                    else if (Convert.ToInt32(stock) < 11)
+                    {
+                        MessageBox.Show("참치의 재고가 10개 남았습니다", "재고알림", MessageBoxButtons.OK);
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'TUNA'";
+                        cmd.ExecuteNonQuery();
+
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
+                        cmd.ExecuteNonQuery();
+
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
+                        cmd.ExecuteNonQuery();
+                        break;
+
+                        rTh.Start(dataa);
+                    }
+                    else
+                    {
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'OCT'";
+                        cmd.ExecuteNonQuery();
+
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
+                        cmd.ExecuteNonQuery();
+
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("주문이 완료 되었습니다.", "주문알림", MessageBoxButtons.OK);
+                        rTh.Start(dataa);
+                    }
+
                 }
             }
 
-            cmd.CommandText = "SELECT STOCK FROM STOCK_MANAGEMENT WHERE NAME = 'KWANG'";
-            rdr = cmd.ExecuteReader();
-            while (rdr.Read())
+            if (dataa == "KWANG")
             {
-                string stock = rdr["STOCK"].ToString();
-                if (Convert.ToInt32(stock) < 11)
+                cmd.CommandText = "SELECT STOCK FROM STOCK_MANAGEMENT WHERE NAME = 'KWANG'";
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read())
                 {
-                    MessageBox.Show("광어의 재고가 10개 남았습니다", "재고알림", MessageBoxButtons.OK);
-                    break;
-                }
-            }
+                    string stock = rdr["STOCK"].ToString();
+                    if (Convert.ToInt32(stock) < Convert.ToInt32(order_stock))
+                    {
+                        MessageBox.Show("광어의 재고가 부족 합니다", "재고알림", MessageBoxButtons.OK);
 
-            cmd.CommandText = "SELECT STOCK FROM STOCK_MANAGEMENT WHERE NAME = 'WASSABI'";
-            rdr = cmd.ExecuteReader();
-            while (rdr.Read())
-            {
-                string stock = rdr["STOCK"].ToString();
-                if (Convert.ToInt32(stock) < 11)
-                {
-                    MessageBox.Show("와사비의 재고가 10개 남았습니다", "재고알림", MessageBoxButtons.OK);
-                    break;
-                }
-            }
+                        break;
+                    }
 
-            cmd.CommandText = "SELECT STOCK FROM STOCK_MANAGEMENT WHERE NAME = 'DAN'";
-            rdr = cmd.ExecuteReader();
-            while (rdr.Read())
-            {
-                string stock = rdr["STOCK"].ToString();
-                if (Convert.ToInt32(stock) < 11)
-                {
-                    MessageBox.Show("단무지의 재고가 10개 남았습니다", "재고알림", MessageBoxButtons.OK);
-                    break;
-                }
-            }
+                    else if (Convert.ToInt32(stock) < 11)
+                    {
+                        MessageBox.Show("광어의 재고가 10개 남았습니다", "재고알림", MessageBoxButtons.OK);
+                        rTh.Start(dataa);
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'TUNA'";
+                        cmd.ExecuteNonQuery();
 
-            cmd.CommandText = "SELECT STOCK FROM STOCK_MANAGEMENT WHERE NAME = 'RAK'";
-            rdr = cmd.ExecuteReader();
-            while (rdr.Read())
-            {
-                string stock = rdr["STOCK"].ToString();
-                if (Convert.ToInt32(stock) < 11)
-                {
-                    MessageBox.Show("락교의 재고가 10개 남았습니다", "재고알림", MessageBoxButtons.OK);
-                    break;
-                }
-            }
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
+                        cmd.ExecuteNonQuery();
 
-            cmd.CommandText = "SELECT STOCK FROM STOCK_MANAGEMENT WHERE NAME = 'RICE1'";
-            rdr = cmd.ExecuteReader();
-            while (rdr.Read())
-            {
-                string stock = rdr["STOCK"].ToString();
-                if (Convert.ToInt32(stock) < 11)
-                {
-                    MessageBox.Show("밥의 재고가 10개 남았습니다", "재고알림", MessageBoxButtons.OK);
-                    break;
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
+                        cmd.ExecuteNonQuery();
+                        break;
+                    }
+                    else
+                    {
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'KWANG'";
+                        cmd.ExecuteNonQuery();
+
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
+                        cmd.ExecuteNonQuery();
+
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("주문이 완료 되었습니다.", "주문알림", MessageBoxButtons.OK);
+                        rTh.Start(dataa);
+                    }
                 }
             }
             oraclesearch();
+            Thread.Sleep(100);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -359,63 +473,28 @@ delegate ()
             if (data == 0)
             {
                 dataa = "TUNA";
-                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'TUNA'";
-                cmd.ExecuteNonQuery();
-
-                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
-                cmd.ExecuteNonQuery();
-
-                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
-                cmd.ExecuteNonQuery();
+               
 
             }
             else if (data == 1)
             {
                 dataa = "EGG";
-                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'EGG'";
-                cmd.ExecuteNonQuery();
-
-                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
-                cmd.ExecuteNonQuery();
-
-                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
-                cmd.ExecuteNonQuery();
+              
             }
             else if (data == 2)
             {
                 dataa = "SALMON";
-                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'SALMON'";
-                cmd.ExecuteNonQuery();
-
-                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
-                cmd.ExecuteNonQuery();
-
-                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
-                cmd.ExecuteNonQuery();
+             
             }
             else if (data == 3)
             {
                 dataa = "OCT";
-                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'OCT'";
-                cmd.ExecuteNonQuery();
-
-                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
-                cmd.ExecuteNonQuery();
-
-                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
-                cmd.ExecuteNonQuery();
+              
             }
             else if (data == 4)
             {
                 dataa = "KWANG";
-                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'KWANG'";
-                cmd.ExecuteNonQuery();
-
-                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
-                cmd.ExecuteNonQuery();
-
-                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
-                cmd.ExecuteNonQuery();
+              
             }
         }
 

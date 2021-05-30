@@ -126,9 +126,6 @@ namespace md
             quan_send(tb.Text);
             kind_send(cmb.SelectedIndex);
 
-            MessageBox.Show("주문이 완료되었습니다 !", "주문완료", MessageBoxButtons.OK);
-            
-
             cmb.Text = string.Empty;    //값 입력 후 초기화 
             tb.Text = string.Empty;
             cb1.Checked = false;
