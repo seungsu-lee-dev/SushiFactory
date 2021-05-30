@@ -49,88 +49,85 @@ namespace md
 
         private void btn1_Click(object sender, EventArgs e)
         {
-            int set;
+            if (tb.Text != "")
+            {
+                string num = tb.Text;
+
+                // 참치 초밥 주문
+                if (cmb.SelectedIndex == 0)
+                {
+                    if (num != "")
+                    {
+                        cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES +{num} where Name = 'TUNA'";
+                        cmd.ExecuteNonQuery();
+                    }
+                    else
+                        cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES + 0 where Name = 'TUNA'";
+
+                }
+
+                // 계란 초밥 주문
+                if (cmb.SelectedIndex == 1)
+                {
+                    if (num != "")
+                    {
+                        cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES +{num} where Name = 'EGG'";
+                        cmd.ExecuteNonQuery();
+                    }
+                    else
+                        cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES + 0 where Name = 'EGG'";
+
+                }
+
+                // 연어 초밥 주문
+                if (cmb.SelectedIndex == 2)
+                {
+                    if (num != "")
+                    {
+                        cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES +{num} where Name = 'SALMON'";
+                        cmd.ExecuteNonQuery();
+                    }
+                    else
+                        cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES + 0 where Name = 'SALMON'";
+
+                }
+
+                // 문어 초밥 주문
+                if (cmb.SelectedIndex == 3)
+                {
+                    if (num != "")
+                    {
+                        cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES +{num} where Name = 'OCT'";
+                        cmd.ExecuteNonQuery();
+                    }
+                    else
+                        cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES + 0 where Name = 'OCT'";
+
+                }
+
+                // 광어 초밥 주문
+                if (cmb.SelectedIndex == 4)
+                {
+                    if (num != "")
+                    {
+                        cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES +{num} where Name = 'KWANG'";
+                        cmd.ExecuteNonQuery();
+                    }
+                    else
+                        cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES + 0 where Name = 'KWANG'";
+                }
+
+                quan_send(tb.Text);
+                kind_send(cmb.SelectedIndex);
+
+                cmb.Text = string.Empty;    //값 입력 후 초기화 
+                tb.Text = string.Empty;
 
 
-            if (cb1.Checked == true)
-                set = 1;                     //세트메뉴가 선택이 되면 값을 1
+                this.Close();
+            }
             else
-                set = 0;                     //세트메뉴가 선택되지 않으면 값을 0 
-
-            string num = tb.Text;
-
-            // 참치 초밥 주문
-            if (cmb.SelectedIndex == 0)
-            {
-                if (num != "")
-                {
-                    cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES +{num} where Name = 'TUNA'";
-                    cmd.ExecuteNonQuery();
-                }
-                else
-                    cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES + 0 where Name = 'TUNA'";
-
-            }
-
-            // 계란 초밥 주문
-            if (cmb.SelectedIndex == 1)
-            {
-                if (num != "")
-                {
-                    cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES +{num} where Name = 'EGG'";
-                    cmd.ExecuteNonQuery();
-                }
-                else
-                    cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES + 0 where Name = 'EGG'";
-
-            }
-
-            // 연어 초밥 주문
-            if (cmb.SelectedIndex == 2)
-            {
-                if (num != "")
-                {
-                    cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES +{num} where Name = 'SALMON'";
-                    cmd.ExecuteNonQuery();
-                }
-                else
-                    cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES + 0 where Name = 'SALMON'";
-
-            }
-
-            // 문어 초밥 주문
-            if (cmb.SelectedIndex == 3)
-            {
-                if (num != "")
-                {
-                    cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES +{num} where Name = 'OCT'";
-                    cmd.ExecuteNonQuery();
-                }
-                else
-                    cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES + 0 where Name = 'OCT'";
-
-            }
-
-            // 광어 초밥 주문
-            if (cmb.SelectedIndex == 4)
-            {
-                if (num != "")
-                {
-                    cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES +{num} where Name = 'KWANG'";
-                    cmd.ExecuteNonQuery();
-                }
-                else
-                    cmd.CommandText = $"UPDATE SALES_MANAGEMENT set SALES = SALES + 0 where Name = 'KWANG'";
-            }
-
-            quan_send(tb.Text);
-            kind_send(cmb.SelectedIndex);
-
-            cmb.Text = string.Empty;    //값 입력 후 초기화 
-            tb.Text = string.Empty;
-            cb1.Checked = false;
-
-            this.Close();
+                MessageBox.Show("주문 내역을 확인해주세요", "확인바람", MessageBoxButtons.OK);
         }
 
         private void btn2_Click(object sender, EventArgs e)
