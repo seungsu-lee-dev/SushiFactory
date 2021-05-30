@@ -37,40 +37,37 @@ namespace md
 
         private void btn1_Click(object sender, EventArgs e)
         {
-            
 
-            int set;
+            if (tb.Text != "")
+            {
 
 
-            if (cb1.Checked == true)
-                set = 1;                     //세트메뉴가 선택이 되면 값을 1
+
+
+                quan_send(tb.Text);
+                kind_send(cmb.SelectedIndex);
+
+                MessageBox.Show("주문이 완료되었습니다 !", "주문완료", MessageBoxButtons.OK);
+
+
+                cmb.Text = string.Empty;    //값 입력 후 초기화 
+                tb.Text = string.Empty;
+
+
+                this.Close();
+            }
             else
-                set = 0;                     //세트메뉴가 선택되지 않으면 값을 0 
-
-           
-
-         
-            quan_send(tb.Text);
-            kind_send(cmb.SelectedIndex);
-
-            MessageBox.Show("주문이 완료되었습니다 !", "주문완료", MessageBoxButtons.OK);
-            
-
-            cmb.Text = string.Empty;    //값 입력 후 초기화 
-            tb.Text = string.Empty;
-            cb1.Checked = false;
-
-            this.Close();
+                MessageBox.Show("주문 내역을 확인해주세요", "확인바람", MessageBoxButtons.OK);
 
 
-            
+
         }
 
         private void btn2_Click(object sender, EventArgs e)
         {
             cmb.Text = string.Empty;
             tb.Text = string.Empty;
-            cb1.Checked = false;       //초기화
+               //초기화
         }
 
         private void cmb_SelectedIndexChanged(object sender, EventArgs e)
