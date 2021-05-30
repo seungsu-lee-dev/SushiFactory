@@ -282,7 +282,7 @@ namespace md
                     {
                         MessageBox.Show("계란의 재고가 10개 남았습니다", "재고알림", MessageBoxButtons.OK);
                         rTh.Start(dataa);
-                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'TUNA'";
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'EGG'";
                         cmd.ExecuteNonQuery();
 
                         cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
@@ -325,7 +325,7 @@ namespace md
                     else if (Convert.ToInt32(stock) < 11)
                     {
                         MessageBox.Show("참치의 재고가 10개 남았습니다", "재고알림", MessageBoxButtons.OK);
-                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'TUNA'";
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'SALMON'";
                         cmd.ExecuteNonQuery();
 
                         cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
@@ -368,7 +368,7 @@ namespace md
                     else if (Convert.ToInt32(stock) < 11)
                     {
                         MessageBox.Show("참치의 재고가 10개 남았습니다", "재고알림", MessageBoxButtons.OK);
-                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'TUNA'";
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'OCT'";
                         cmd.ExecuteNonQuery();
 
                         cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
@@ -415,7 +415,7 @@ namespace md
                     {
                         MessageBox.Show("광어의 재고가 10개 남았습니다", "재고알림", MessageBoxButtons.OK);
                         rTh.Start(dataa);
-                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'TUNA'";
+                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'KWANG'";
                         cmd.ExecuteNonQuery();
 
                         cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
