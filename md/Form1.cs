@@ -609,6 +609,8 @@ delegate ()
                     ModifyProgressBarColor.SetState(pbRak, 1);
                 }
             }
+
+            dataa = "";
         }
 
         private void pbBob_MouseHover(object sender, EventArgs e)
