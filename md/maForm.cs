@@ -119,9 +119,11 @@ namespace md
             int kwang_price = 1500;
             // 데이터 받아오기
 
+            int RiceSide = 200 + 200 + 100 + 200; // 밥 + 와사비 + 단무지 + 락교
+
             string[] x1 = { "참치초밥", "계란초밥", "연어초밥", "문어초밥", "광어초밥" };
             int[] y1 = { TUNA_SALES, EGG_SALES, SALMON_SALES, OCT_SALES, KWANG_SALES };
-            int[] y2 = { y1[0] * tuna_price, y1[1] * egg_price, y1[2] * salmon_price, y1[3] * oct_price, y1[4] * kwang_price };
+            int[] y2 = { y1[0] * (tuna_price + RiceSide), y1[1] * (egg_price + RiceSide), y1[2] * (salmon_price + RiceSide), y1[3] * (oct_price + RiceSide), y1[4] * (kwang_price + RiceSide)};
 
             // 차트 만들기
             Chart1.Series[0].Name = "판매량";
@@ -138,7 +140,7 @@ namespace md
             Chart1.ChartAreas[0].AxisY2.LabelAutoFitStyle = 0;
             Chart1.ChartAreas[0].AxisY2.MajorGrid.LineWidth = 0;
             Chart1.ChartAreas[0].AxisY2.MinorGrid.LineWidth = 0;
-            Chart1.ChartAreas[0].AxisY2.Interval = 10000;
+            //Chart1.ChartAreas[0].AxisY2.Interval = 10000;
 
             // 리스트뷰 만들기
             listView1.View = View.Details;

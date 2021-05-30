@@ -134,7 +134,6 @@ namespace md
         {
             cmb.Text = string.Empty;
             tb.Text = string.Empty;
-            cb1.Checked = false;       //초기화
         }
 
         private void cmb_SelectedIndexChanged(object sender, EventArgs e)

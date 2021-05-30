@@ -32,10 +32,8 @@ namespace md
             this.label1 = new System.Windows.Forms.Label();
             this.cmb = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.btn1 = new System.Windows.Forms.Button();
             this.btn2 = new System.Windows.Forms.Button();
-            this.cb1 = new System.Windows.Forms.CheckBox();
             this.tb = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -70,16 +68,6 @@ namespace md
             this.label2.TabIndex = 2;
             this.label2.Text = "수량";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("굴림", 12F);
-            this.label3.Location = new System.Drawing.Point(456, 240);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 20);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "세트";
-            // 
             // btn1
             // 
             this.btn1.Location = new System.Drawing.Point(200, 352);
@@ -102,15 +90,6 @@ namespace md
             this.btn2.UseVisualStyleBackColor = false;
             this.btn2.Click += new System.EventHandler(this.btn2_Click);
             // 
-            // cb1
-            // 
-            this.cb1.AutoSize = true;
-            this.cb1.Location = new System.Drawing.Point(544, 240);
-            this.cb1.Name = "cb1";
-            this.cb1.Size = new System.Drawing.Size(18, 17);
-            this.cb1.TabIndex = 7;
-            this.cb1.UseVisualStyleBackColor = true;
-            // 
             // tb
             // 
             this.tb.Location = new System.Drawing.Point(528, 168);
@@ -126,21 +105,19 @@ namespace md
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
-            // Form1
+            // junForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tb);
-            this.Controls.Add(this.cb1);
             this.Controls.Add(this.btn2);
             this.Controls.Add(this.btn1);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmb);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "junForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -154,10 +131,8 @@ namespace md
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmb;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn1;
         private System.Windows.Forms.Button btn2;
-        private System.Windows.Forms.CheckBox cb1;
         private System.Windows.Forms.TextBox tb;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

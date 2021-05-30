@@ -83,19 +83,6 @@ namespace md
                 a[8].BringToFront();
                 a[7].BringToFront();
 
-                //pictureBox9.Controls.Add(pictureBox4);
-                //pictureBox4.Location = new Point(0, 0);
-                //pictureBox4.BackColor = Color.Transparent;
-                //pictureBox4.BringToFront();
-
-                //pictureBox9.Controls.Add(pictureBox5);
-                //pictureBox5.Location = new Point(0, 0);
-                //pictureBox5.BackColor = Color.Transparent;
-
-                //pictureBox9.Controls.Add(pictureBox6);
-                //pictureBox6.Location = new Point(0, 0);
-                //pictureBox6.BackColor = Color.Transparent;
-
                 a[0].Invoke(
     new MethodInvoker(
         delegate ()
@@ -140,6 +127,7 @@ namespace md
             }
         )
     );
+
                 a[4].Visible = true;
                 Point p7 = a[1].Location;
                 Point p10 = a[4].Location;
@@ -157,7 +145,6 @@ namespace md
                 a[4].Visible = false;
                 a[1].Location = p7;
                 a[4].Location = p10;
-
 
                 a[2].Invoke(
     new MethodInvoker(
@@ -219,6 +206,19 @@ namespace md
             Thread rTh = new Thread(new ParameterizedThreadStart(MakeChobab));
             OracleDataReader rdr;
 
+            bool FishBool = false;
+            bool RiceSideBool = UpdateRIceSide();
+            if (RiceSideBool)
+                FishBool = true;
+
+            if (!FishBool)
+                return;
+
+            if (dataa == "")
+            {
+                return;
+            }
+
             if (dataa == "TUNA")
             {
                 cmd.CommandText = "SELECT STOCK FROM STOCK_MANAGEMENT WHERE NAME = 'TUNA'";
@@ -233,35 +233,21 @@ namespace md
                     if (Convert.ToInt32(stock) < Convert.ToInt32(order_stock))
                     {
                         MessageBox.Show("참치의 재고가 부족 합니다", "재고알림", MessageBoxButtons.OK);
+                        FishBool = false;
                         break;
                     }
 
                     else if (Convert.ToInt32(stock) < 11)
                     {
-                        MessageBox.Show("참치의 재고가 10개 남았습니다", "재고알림", MessageBoxButtons.OK);
+                        MessageBox.Show("참치의 재고가 "+stock+"개 남았습니다", "재고알림", MessageBoxButtons.OK);
                         cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'TUNA'";
                         cmd.ExecuteNonQuery();
-
-                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
-                        cmd.ExecuteNonQuery();
-
-                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
-                        cmd.ExecuteNonQuery();
-                        rTh.Start(dataa);
                         break;
                     }
                     else
                     {
                         cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'TUNA'";
                         cmd.ExecuteNonQuery();
-
-                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
-                        cmd.ExecuteNonQuery();
-
-                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("주문이 완료 되었습니다.", "주문알림", MessageBoxButtons.OK);
-                        rTh.Start(dataa);
                     }
                 }
             }
@@ -276,19 +262,13 @@ namespace md
                     if (Convert.ToInt32(stock) < Convert.ToInt32(order_stock))
                     {
                         MessageBox.Show("계란의 재고가 부족 합니다", "재고알림", MessageBoxButtons.OK);
+                        FishBool = false;
                         break;
                     }
                     else if (Convert.ToInt32(stock) < 11)
                     {
-                        MessageBox.Show("계란의 재고가 10개 남았습니다", "재고알림", MessageBoxButtons.OK);
-                        rTh.Start(dataa);
+                        MessageBox.Show("계란의 재고가 " + stock + "개 남았습니다", "재고알림", MessageBoxButtons.OK);
                         cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'EGG'";
-                        cmd.ExecuteNonQuery();
-
-                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
-                        cmd.ExecuteNonQuery();
-
-                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
                         cmd.ExecuteNonQuery();
                         break;
                     }
@@ -296,15 +276,6 @@ namespace md
                     {
                         cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'EGG'";
                         cmd.ExecuteNonQuery();
-
-                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
-                        cmd.ExecuteNonQuery();
-
-                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("주문이 완료 되었습니다.", "주문알림", MessageBoxButtons.OK);
-                        rTh.Start(dataa);
-
                     }
                 }
             }
@@ -319,35 +290,20 @@ namespace md
                     if (Convert.ToInt32(stock) < Convert.ToInt32(order_stock))
                     {
                         MessageBox.Show("연어의 재고가 부족 합니다", "재고알림", MessageBoxButtons.OK);
+                        FishBool = false;
                         break;
                     }
 
                     else if (Convert.ToInt32(stock) < 11)
                     {
-                        MessageBox.Show("참치의 재고가 10개 남았습니다", "재고알림", MessageBoxButtons.OK);
+                        MessageBox.Show("참치의 재고가 " + stock + "개 남았습니다", "재고알림", MessageBoxButtons.OK);
                         cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'SALMON'";
                         cmd.ExecuteNonQuery();
-
-                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
-                        cmd.ExecuteNonQuery();
-
-                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
-                        cmd.ExecuteNonQuery();
-                        rTh.Start(dataa);
-                        
                     }
                     else
                     {
                         cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'SALMON'";
                         cmd.ExecuteNonQuery();
-
-                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
-                        cmd.ExecuteNonQuery();
-
-                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("주문이 완료 되었습니다.", "주문알림", MessageBoxButtons.OK);
-                        rTh.Start(dataa);
                     }
                 }
             }
@@ -362,36 +318,22 @@ namespace md
                     if (Convert.ToInt32(stock) < Convert.ToInt32(order_stock))
                     {
                         MessageBox.Show("문어의 재고가 부족 합니다", "재고알림", MessageBoxButtons.OK);
+                        FishBool = false;
                         break;
                     }
 
                     else if (Convert.ToInt32(stock) < 11)
                     {
-                        MessageBox.Show("참치의 재고가 10개 남았습니다", "재고알림", MessageBoxButtons.OK);
+                        MessageBox.Show("참치의 재고가 " + stock + "개 남았습니다", "재고알림", MessageBoxButtons.OK);
                         cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'OCT'";
-                        cmd.ExecuteNonQuery();
-
-                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
-                        cmd.ExecuteNonQuery();
-
-                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
                         cmd.ExecuteNonQuery();
                         break;
 
-                        rTh.Start(dataa);
                     }
                     else
                     {
                         cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'OCT'";
                         cmd.ExecuteNonQuery();
-
-                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
-                        cmd.ExecuteNonQuery();
-
-                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("주문이 완료 되었습니다.", "주문알림", MessageBoxButtons.OK);
-                        rTh.Start(dataa);
                     }
 
                 }
@@ -407,21 +349,14 @@ namespace md
                     if (Convert.ToInt32(stock) < Convert.ToInt32(order_stock))
                     {
                         MessageBox.Show("광어의 재고가 부족 합니다", "재고알림", MessageBoxButtons.OK);
-
+                        FishBool = false;
                         break;
                     }
 
                     else if (Convert.ToInt32(stock) < 11)
                     {
-                        MessageBox.Show("광어의 재고가 10개 남았습니다", "재고알림", MessageBoxButtons.OK);
-                        rTh.Start(dataa);
+                        MessageBox.Show("광어의 재고가 " + stock + "개 남았습니다", "재고알림", MessageBoxButtons.OK);
                         cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'KWANG'";
-                        cmd.ExecuteNonQuery();
-
-                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
-                        cmd.ExecuteNonQuery();
-
-                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
                         cmd.ExecuteNonQuery();
                         break;
                     }
@@ -429,17 +364,16 @@ namespace md
                     {
                         cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'KWANG'";
                         cmd.ExecuteNonQuery();
-
-                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
-                        cmd.ExecuteNonQuery();
-
-                        cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("주문이 완료 되었습니다.", "주문알림", MessageBoxButtons.OK);
-                        rTh.Start(dataa);
                     }
                 }
             }
+
+            if (FishBool && RiceSideBool)
+            {
+                rTh.Start(dataa);
+                MessageBox.Show("주문이 완료 되었습니다.", "주문알림", MessageBoxButtons.OK);
+            }
+
             oraclesearch();
             Thread.Sleep(100);
         }
@@ -473,28 +407,28 @@ namespace md
             if (data == 0)
             {
                 dataa = "TUNA";
-               
+
 
             }
             else if (data == 1)
             {
                 dataa = "EGG";
-              
+
             }
             else if (data == 2)
             {
                 dataa = "SALMON";
-             
+
             }
             else if (data == 3)
             {
                 dataa = "OCT";
-              
+
             }
             else if (data == 4)
             {
                 dataa = "KWANG";
-              
+
             }
         }
 
@@ -736,6 +670,117 @@ namespace md
         {
             toolTip9.SetToolTip(pbRak, $"{Convert.ToInt32(pbRak.Value)}/100");
         }
+
+        bool UpdateRIceSide()
+        {
+            // 밥
+            cmd.CommandText = "select STOCK from STOCK_MANAGEMENT where NAME = 'RICE1'";
+            OracleDataReader rdr;
+
+            bool RiceSideBool = true;
+
+            // 결과 리더 객체를 리턴
+            rdr = cmd.ExecuteReader();
+            // 레코드 계속 가져와서 루핑
+            while (rdr.Read())
+            {
+                // 필드 데이타 읽기
+                string stock = rdr["STOCK"].ToString();
+                if (Convert.ToInt32(stock) < Convert.ToInt32(order_stock))
+                {
+                    MessageBox.Show("밥의 재고가 부족 합니다", "재고알림", MessageBoxButtons.OK);
+                    RiceSideBool = false;
+                }
+                else if (Convert.ToInt32(stock) < 11)
+                {
+                    MessageBox.Show("밥의 재고가 " + stock + "개 남았습니다", "재고알림", MessageBoxButtons.OK);
+                    break;
+                }
+            }
+
+            // 와사비
+            cmd.CommandText = "select STOCK from STOCK_MANAGEMENT where NAME = 'WASSABI'";
+            OracleDataReader rdr1 = cmd.ExecuteReader();
+
+            // 결과 리더 객체를 리턴
+            rdr1 = cmd.ExecuteReader();
+            // 레코드 계속 가져와서 루핑
+            while (rdr1.Read())
+            {
+                // 필드 데이타 읽기
+                string stock = rdr1["STOCK"].ToString();
+                if (Convert.ToInt32(stock) < Convert.ToInt32(order_stock))
+                {
+                    MessageBox.Show("와사비의 재고가 부족 합니다", "재고알림", MessageBoxButtons.OK);
+                    RiceSideBool = false;
+                }
+                else if (Convert.ToInt32(stock) < 11)
+                {
+                    MessageBox.Show("와사비의 재고가 " + stock + "개 남았습니다", "재고알림", MessageBoxButtons.OK);
+                    break;
+                }
+            }
+
+            // 단무지
+            cmd.CommandText = "select STOCK from STOCK_MANAGEMENT where NAME = 'DAN'";
+            OracleDataReader rdr2 = cmd.ExecuteReader();
+
+            // 결과 리더 객체를 리턴
+            rdr2 = cmd.ExecuteReader();
+            // 레코드 계속 가져와서 루핑
+            while (rdr2.Read())
+            {
+                // 필드 데이타 읽기
+                string stock = rdr2["STOCK"].ToString();
+                if (Convert.ToInt32(stock) < Convert.ToInt32(order_stock))
+                {
+                    MessageBox.Show("단무지의 재고가 부족 합니다", "재고알림", MessageBoxButtons.OK);
+                    RiceSideBool = false;
+                }
+                else if (Convert.ToInt32(stock) < 11)
+                {
+                    MessageBox.Show("단무지의 재고가 " + stock + "개 남았습니다", "재고알림", MessageBoxButtons.OK);
+                    break;
+                }
+            }
+
+            // 락교
+            cmd.CommandText = "select STOCK from STOCK_MANAGEMENT where NAME = 'RAK'";
+            OracleDataReader rdr3 = cmd.ExecuteReader();
+
+            // 결과 리더 객체를 리턴
+            rdr3 = cmd.ExecuteReader();
+            // 레코드 계속 가져와서 루핑
+            while (rdr3.Read())
+            {
+                // 필드 데이타 읽기
+                string stock = rdr3["STOCK"].ToString();
+                if (Convert.ToInt32(stock) < Convert.ToInt32(order_stock))
+                {
+                    MessageBox.Show("락교의 재고가 부족 합니다", "재고알림", MessageBoxButtons.OK);
+                    RiceSideBool = false;
+                }
+                else if (Convert.ToInt32(stock) < 11)
+                {
+                    MessageBox.Show("락교의 재고가 " + stock + "개 남았습니다", "재고알림", MessageBoxButtons.OK);
+                    break;
+                }
+            }
+
+            if (RiceSideBool)
+            {
+                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'DAN'";
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RAK'";
+                cmd.ExecuteNonQuery();
+            }
+            return RiceSideBool;
+        }
+
     }
 
     public static class ModifyProgressBarColor
