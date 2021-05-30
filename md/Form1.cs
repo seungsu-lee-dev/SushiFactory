@@ -76,6 +76,7 @@ namespace md
             else
             {
                 MessageBox.Show("잘못 입력");
+                return;
             }
             a[8].BringToFront();
             a[7].BringToFront();
@@ -370,18 +371,6 @@ delegate ()
             }
             else if (data == 1)
             {
-                dataa = "KWANG";
-                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'KWANG'";
-                cmd.ExecuteNonQuery();
-
-                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
-                cmd.ExecuteNonQuery();
-
-                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
-                cmd.ExecuteNonQuery();
-            }
-            else if (data == 2)
-            {
                 dataa = "EGG";
                 cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'EGG'";
                 cmd.ExecuteNonQuery();
@@ -392,7 +381,7 @@ delegate ()
                 cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
                 cmd.ExecuteNonQuery();
             }
-            else if (data == 3)
+            else if (data == 2)
             {
                 dataa = "SALMON";
                 cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'SALMON'";
@@ -404,10 +393,22 @@ delegate ()
                 cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
                 cmd.ExecuteNonQuery();
             }
-            else if (data == 4)
+            else if (data == 3)
             {
                 dataa = "OCT";
                 cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'OCT'";
+                cmd.ExecuteNonQuery();
+
+                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
+                cmd.ExecuteNonQuery();
+
+                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
+                cmd.ExecuteNonQuery();
+            }
+            else if (data == 4)
+            {
+                dataa = "KWANG";
+                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'KWANG'";
                 cmd.ExecuteNonQuery();
 
                 cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
