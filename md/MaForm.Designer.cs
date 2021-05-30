@@ -39,6 +39,7 @@ namespace md
             this.listView2 = new System.Windows.Forms.ListView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Chart1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -121,17 +122,28 @@ namespace md
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Form1
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(653, 31);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(116, 50);
+            this.btnClear.TabIndex = 5;
+            this.btnClear.Text = "초기화";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // maForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Chart1);
             this.Controls.Add(this.button1);
-            this.Name = "Form1";
+            this.Name = "maForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Chart1)).EndInit();
@@ -150,6 +162,7 @@ namespace md
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnClear;
     }
 }
 
