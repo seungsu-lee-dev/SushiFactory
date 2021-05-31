@@ -11,7 +11,7 @@ namespace md
     {
         string strConn = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xe)));User Id = hr; Password=hr;";
 
-        // 오라클 연결
+        // 오라클 연결 //
         OracleConnection conn;
         OracleCommand cmd;
 
