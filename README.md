@@ -46,7 +46,7 @@
 
 ![슬라이드19](https://user-images.githubusercontent.com/68325847/120141788-17d87f00-c218-11eb-9f03-6fd73c5f28dc.PNG)
 
-![슬라이드20](https://user-images.githubusercontent.com/68325847/120141796-1e66f680-c218-11eb-9b6f-26bf26f9994d.PNG)
+https://user-images.githubusercontent.com/68325847/120141878-4b1b0e00-c218-11eb-885d-0e80faaf2f70.mp4
 
 ![슬라이드21](https://user-images.githubusercontent.com/68325847/120141800-2161e700-c218-11eb-9fe2-01ee85b2d59f.PNG)
 
