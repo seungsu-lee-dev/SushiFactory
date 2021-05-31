@@ -211,9 +211,6 @@ namespace md
             if (RiceSideBool)
                 FishBool = true;
 
-            if (!FishBool)
-                return;
-
             if (dataa == "")
             {
                 return;
@@ -241,13 +238,11 @@ namespace md
                     {
                         MessageBox.Show("참치의 재고가 "+stock+"개 남았습니다", "재고알림", MessageBoxButtons.OK);
                         cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'TUNA'";
-                        cmd.ExecuteNonQuery();
                         break;
                     }
                     else
                     {
                         cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'TUNA'";
-                        cmd.ExecuteNonQuery();
                     }
                 }
             }
@@ -269,13 +264,11 @@ namespace md
                     {
                         MessageBox.Show("계란의 재고가 " + stock + "개 남았습니다", "재고알림", MessageBoxButtons.OK);
                         cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'EGG'";
-                        cmd.ExecuteNonQuery();
                         break;
                     }
                     else
                     {
                         cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'EGG'";
-                        cmd.ExecuteNonQuery();
                     }
                 }
             }
@@ -296,14 +289,12 @@ namespace md
 
                     else if (Convert.ToInt32(stock) < 11)
                     {
-                        MessageBox.Show("참치의 재고가 " + stock + "개 남았습니다", "재고알림", MessageBoxButtons.OK);
+                        MessageBox.Show("연어의 재고가 " + stock + "개 남았습니다", "재고알림", MessageBoxButtons.OK);
                         cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'SALMON'";
-                        cmd.ExecuteNonQuery();
                     }
                     else
                     {
                         cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'SALMON'";
-                        cmd.ExecuteNonQuery();
                     }
                 }
             }
@@ -326,14 +317,12 @@ namespace md
                     {
                         MessageBox.Show("참치의 재고가 " + stock + "개 남았습니다", "재고알림", MessageBoxButtons.OK);
                         cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'OCT'";
-                        cmd.ExecuteNonQuery();
                         break;
 
                     }
                     else
                     {
                         cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'OCT'";
-                        cmd.ExecuteNonQuery();
                     }
 
                 }
@@ -357,19 +346,26 @@ namespace md
                     {
                         MessageBox.Show("광어의 재고가 " + stock + "개 남았습니다", "재고알림", MessageBoxButtons.OK);
                         cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'KWANG'";
-                        cmd.ExecuteNonQuery();
                         break;
                     }
                     else
                     {
                         cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'KWANG'";
-                        cmd.ExecuteNonQuery();
                     }
                 }
             }
 
             if (FishBool && RiceSideBool)
             {
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'DAN'";
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RAK'";
+                cmd.ExecuteNonQuery();
                 rTh.Start(dataa);
                 MessageBox.Show("주문이 완료 되었습니다.", "주문알림", MessageBoxButtons.OK);
             }
@@ -770,14 +766,7 @@ namespace md
 
             if (RiceSideBool)
             {
-                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RICE1'";
-                cmd.ExecuteNonQuery();
-                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'WASSABI'";
-                cmd.ExecuteNonQuery();
-                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'DAN'";
-                cmd.ExecuteNonQuery();
-                cmd.CommandText = $"UPDATE STOCK_MANAGEMENT set STOCK = STOCK -{order_stock} where Name = 'RAK'";
-                cmd.ExecuteNonQuery();
+
             }
             return RiceSideBool;
         }
