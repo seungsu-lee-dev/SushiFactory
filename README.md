@@ -8,7 +8,7 @@
 
 개발기간 : 2021년 5월 26일 ~ 2021년 5월 31일
 
-![슬라이드1](https://user-images.githubusercontent.com/68325847/120141673-df38a580-c217-11eb-8034-0b70be798c1e.PNG)
+![슬라이드1](https://user-images.githubusercontent.com/68325847/120886575-a6d70400-c629-11eb-81c7-2f2c194cf347.png)
 
 ![슬라이드2](https://user-images.githubusercontent.com/68325847/120141683-e52e8680-c217-11eb-902d-5ea2b08a3d36.PNG)
 
